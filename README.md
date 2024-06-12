@@ -6,7 +6,7 @@ npm create astro@latest -- --template basics
 
 
 
-![just-the-basics](public/perfil.jpeg)
+![just-the-basics](public/portfolioIcon.jpeg)
 
 ## 🚀 Project Structure
 
