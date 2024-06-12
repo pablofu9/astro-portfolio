@@ -1,7 +1,7 @@
 ---
 import SwiftIcon from '../components/icons/Swift.astro';
 import FirebaseIcon from '../components/icons/Firebase.astro';
-
+import GitHubIcon from '../components/icons/GitHub.astro'
 const TAGS = {
     SWITFUI: {
         name: "SwiftUI",
@@ -17,7 +17,15 @@ const TAGS = {
 const PROJECTS = [
     {
         title:"Fast Team APP",
-        description: "application to connect with people to play with",
+        description: "Application to connect with people to play with",
+        link: "#",
+        github: "https://github.com/pablofu9/FastTeamIOs",
+        image: "/fastTeam.jpg",
+        tags: [TAGS.SWITFUI, TAGS.FIREBASE]
+    },
+    {
+        title:"PFlix",
+        description: "Application thats uses TMBD to create a look alike netflix app",
         link: "#",
         github: "https://github.com/pablofu9/FastTeamIOs",
         image: "/fastTeam.jpg",
@@ -25,24 +33,34 @@ const PROJECTS = [
     }
 ]
 ---
-
+<div class="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
 {
+  
     PROJECTS.map(({title, description, tags, image}) => (
-        <article>
+    <article class="border rounded-lg p-4 bg-white bg-opacity-10 ">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-2">
                {tags.map(tag => (
                 <li>
-                <span class={'flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-sky-300'}>
-                    <tag.icon />
+                <span class={'flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-red-300'}>
+                    <tag.icon  />
+                    {tag.name}
                 </span>
                 </li>
                ))}
             </ul>
-            <img class="rounded shadow-white/20" 
+            <div class="relative group">
+            {/* <img class="rounded shadow-white/20 hover-effect w-20 h-20" 
             src={image} 
-            alt={title}/>
+            alt={title}/> */}
+            {/* <a href={PROJECTS[0].link} class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button class="bg-white text-black py-2 px-4 rounded"><GitHubIcon class="w-6 h-6"/></button>
+                </a> */}
+            </div>
+        
         </article>
     ))
+    
 }
+<div/>
