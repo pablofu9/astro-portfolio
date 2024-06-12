@@ -15,8 +15,13 @@ import CodeIcon from '../components/icons/Code.astro';
 ---
 
 <Layout title='Pablo fuertes', description='IOs developer'>
+	
 	<main class="px-2">
-		<SectionContainer class="pb-20">
+		<SectionContainer id="about" class="pb-20">
+			<img class="rounded-full w-24 h-24" 
+			src="public/perfil.jpeg"
+			 alt="My photo"
+			/>
 		<h1 class="text-white text-3xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 			Hey, soy Pablo fuertes
 		</h1>
@@ -24,7 +29,7 @@ import CodeIcon from '../components/icons/Code.astro';
 			<span class="text-yellow-200">IOs developer</span>, specialized in creating unique applications.
 			 <span class="text-red-200/90">Valladolid, Spain.</span>
 		</h2>
-		<nav class="flex gap-x-2 pt-5 pb-20">
+		<nav class="flex gap-x-4 pt-5 pb-20">
 				<SocialPill href="https://www.linkedin.com/in/pablo-fuertes-94369b159/" >
 					<LinkedinIcon class="w-6 h-6" />
 					Linkedin
@@ -41,7 +46,7 @@ import CodeIcon from '../components/icons/Code.astro';
 	</SectionContainer>
 	<SectionContainer id="experience" >
 		
-		<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 			<Briefcase class="size-9" />
 			Experience
 		</h2>
@@ -50,7 +55,7 @@ import CodeIcon from '../components/icons/Code.astro';
 
 	<SectionContainer id="projects" class="">
 		
-		<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 			<CodeIcon class="size-9" />
 			Proyectos
 		</h2>

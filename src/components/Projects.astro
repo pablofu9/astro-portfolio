@@ -1,12 +1,27 @@
 ---
+import SwiftIcon from '../components/icons/Swift.astro';
+import FirebaseIcon from '../components/icons/Firebase.astro';
+
+const TAGS = {
+    SWITFUI: {
+        name: "SwiftUI",
+        class: "bg-white ",
+        icon: SwiftIcon
+    },
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-white",
+        icon: FirebaseIcon
+    }
+}
 const PROJECTS = [
     {
-        title:"Project 1",
-        description: "Description",
+        title:"Fast Team APP",
+        description: "application to connect with people to play with",
         link: "#",
-        github: "#",
-        image: "https://via.placeholder.com/300x200",
-        tags: ['SWIFTUI', 'FIREBASE', 'COREDATA']
+        github: "https://github.com/pablofu9/FastTeamIOs",
+        image: "public/projects/fastTeam.jpg",
+        tags: [TAGS.SWITFUI, TAGS.FIREBASE]
     }
 ]
 ---
@@ -14,14 +29,20 @@ const PROJECTS = [
 {
     PROJECTS.map(({title, description, tags, image}) => (
         <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
                {tags.map(tag => (
-                <li>{tag}</li>
+                <li>
+                <span class={'flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-sky-300'}>
+                    <tag.icon />
+                </span>
+                </li>
                ))}
             </ul>
-            <img src={image} alt={title}/>
+            <img class="rounded shadow-white/20" 
+            src={image} 
+            alt={title}/>
         </article>
     ))
 }
