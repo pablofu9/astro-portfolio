@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "At the moment...",
+        title: "IOs developer | Five flames mobile",
+        description: "At Five Flames Mobile, I develop iOS applications using SwiftUI, employing technologies like CoreData, AWS, Firebase, and API integrations. My focus is on creating efficient and modern solutions.",
+        link: "https://fiveflamesmobile.com",
+    },
+    {
+        date: "May 2019 - October 2019",
+        title: "Web developer",
+        description: "From May 2019 to October 2019, I worked at astibot as a frontend developer. My responsabilities included utilizing Angular, html and css mostly. Then I decided to part ways, to keep learning and improving.",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+   
+</ol>
