@@ -1,66 +1,118 @@
 ---
-import SwiftIcon from '../components/icons/Swift.astro';
-import FirebaseIcon from '../components/icons/Firebase.astro';
-import GitHubIcon from '../components/icons/GitHub.astro'
+import SwiftIcon from "../components/icons/Swift.astro";
+import FirebaseIcon from "../components/icons/Firebase.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import InfoIcon from "../components/icons/Info.astro"
+import MapKitIcon from "../components/icons/MapKit.astro"
 const TAGS = {
     SWITFUI: {
         name: "SwiftUI",
         class: "bg-white ",
-        icon: SwiftIcon
+        icon: SwiftIcon,
     },
     FIREBASE: {
         name: "Firebase",
         class: "bg-white",
-        icon: FirebaseIcon
-    }
-}
+        icon: FirebaseIcon,
+    },
+    MAPKIT: {
+        name: "MapKit",
+        class: "bg-white",
+        icon: MapKitIcon,
+    },
+
+};
 const PROJECTS = [
     {
-        title:"Fast Team APP",
-        description: "Application to connect with people to play with",
+        title: "Map finder",
+        description: "An application, which is a mix between the Apple Maps map and the weather application. We use the UIKit map to show the selected places, the MKLocalSearcher to show search results based on the region in which the user is located Finally, we use the https://open-meteo.com api to show weather information for the selected place. We make our api calls using the dependency injection technique to make the application as modular as possible and to promote Clean Code. MVVM and Clean code pattern used throughout the app.",
         link: "#",
-        github: "https://github.com/pablofu9/FastTeamIOs",
+        github: "https://github.com/pablofu9/MapFinder",
         image: "/fastTeam.jpg",
-        tags: [TAGS.SWITFUI, TAGS.FIREBASE]
-    },
-    {
-        title:"PFlix",
-        description: "Application thats uses TMBD to create a look alike netflix app",
-        link: "#",
-        github: "https://github.com/pablofu9/FastTeamIOs",
-        image: "/fastTeam.jpg",
-        tags: [TAGS.SWITFUI, TAGS.FIREBASE]
+        assets: ["/Home.jpg", "/Search.jpg", "/Place.jpg", "/Favorites.jpg"],
+        tags: [TAGS.SWITFUI, TAGS.FIREBASE, TAGS.MAPKIT],
     }
-]
+    // {
+    //     title: "PFlix",
+    //     description:
+    //         "Application thats uses TMBD to create a look alike netflix app",
+    //     link: "#",
+    //     github: "https://github.com/pablofu9/FastTeamIOs",
+    //     image: "/fastTeam.jpg",
+    //     tags: [TAGS.SWITFUI, TAGS.FIREBASE],
+    // },
+];
 ---
-<div class="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-{
-  
-    PROJECTS.map(({title, description, tags, image}) => (
-    <article class="border rounded-lg p-4 bg-white bg-opacity-10 ">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-2">
-               {tags.map(tag => (
-                <li>
-                <span class={'flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-red-300'}>
-                    <tag.icon  />
-                    {tag.name}
-                </span>
-                </li>
-               ))}
-            </ul>
-            <div class="relative group">
-            {/* <img class="rounded shadow-white/20 hover-effect w-20 h-20" 
+
+<div class="container mx-auto py-8 grid grid-cols-1  gap-8">
+    {
+        PROJECTS.map(({ title, description, tags, image, github,assets }) => (
+            <article class="border rounded-lg p-4 bg-white bg-opacity-10 ">
+                <div class="flex ">
+                <h3 class="text-2xl font-semibold text-yellow-200 pr-4">
+                    {title}
+                </h3>
+                <h2 class="rounded bg-gray-400/60 font-semibold text-red-400 p-1">
+                    Building...
+                </h2>
+                </div>
+
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-x-2 flex-row mb-2">
+                    {tags.map((tag) => (
+                        <li>
+                            <span
+                                class={
+                                    "flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-red-300"
+                                }
+                            >
+                                <tag.icon />
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <div class="container mx-auto py-8 grid grid-cols-4 gap-4">
+                
+                     {assets?.map((asset) => (
+                       
+                            <span >
+                                <img class="w-auto h-100"
+			                    src= {asset}
+			                    alt="Image"
+			                    />
+                            </span>
+                       
+                    ))}
+              
+                </div>
+                <ul class="flex gap-x-2 flex-row mb-2">
+                    <li>
+                        <span
+                            class={
+                                "flex gap-x-2 rounded-full pr-2 py-2"
+                            }
+                        >
+                            <span class={
+                                "flex gap-x-2 rounded-full  ${tag.class} py-1 px-4 bg-white text-black hover:scale-105 transition border border-purple-400"
+                            }>
+                                <a href={github} class="flex gap-x-2">
+                                    <GitHubIcon class="w-6 h-6" />
+                                    Explore the code
+                                </a>
+                            </span>
+                           
+                        </span>
+                    </li>
+                </ul>
+                {/* <img class="rounded shadow-white/20 hover-effect w-20 h-20" 
             src={image} 
             alt={title}/> */}
-            {/* <a href={PROJECTS[0].link} class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                {/* <a href={PROJECTS[0].link} class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button class="bg-white text-black py-2 px-4 rounded"><GitHubIcon class="w-6 h-6"/></button>
                 </a> */}
-            </div>
-        
-        </article>
-    ))
-    
-}
-<div/>
+            </article>
+        ))
+    }
+    <div></div>
+</div>
