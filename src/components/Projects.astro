@@ -2,7 +2,9 @@
 import SwiftIcon from "../components/icons/Swift.astro";
 import FirebaseIcon from "../components/icons/Firebase.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
-import MapKitIcon from "../components/icons/MapKit.astro"
+import MapKitIcon from "../components/icons/MapKit.astro";
+import MongoIcon from "../components/icons/Mongo.astro";
+import RealmIcon from "../components/icons/Realm.astro";
 
 const TAGS = {
     SWITFUI: {
@@ -20,6 +22,17 @@ const TAGS = {
         class: "bg-white",
         icon: MapKitIcon,
     },
+    MONGO: {
+        name: "MongoDB",
+        class: "bg-white",
+        icon: MongoIcon,
+    },
+    REALM: {
+        name: "Realm",
+        class: "bg-white",
+        icon: RealmIcon,
+    },
+
 
 };
 const PROJECTS = [
@@ -31,7 +44,17 @@ const PROJECTS = [
         image: "/fastTeam.jpg",
         assets: ["/Home.jpg", "/Search.jpg", "/Place.jpg", "/Favorites.jpg", "/Weather.jpg"],
         tags: [TAGS.SWITFUI, TAGS.FIREBASE, TAGS.MAPKIT],
+    },
+    {
+        title: "Share life",
+        description: "This is an iOS application developed with SwiftUI, designed to manage shared living arrangements, both for couples and friends. Its primary goal is to enable household members to share vital information such as notes, calendars, work shifts, tasks, and shopping lists. The application has been developed using Realm, leveraging AtlasDB to host the database in the cloud. This setup allows data sharing without the need for web services, ensuring a seamless and efficient experience for users. Special emphasis has been placed on utilizing Realm and AtlasDB to provide robust, cloud-based data synchronization and storage solutions.",
+        link: "#",
+        github: "https://github.com/pablofu9/ShareLife",
+        image: "/vista1.png",
+        assets: ["/vista1.png", "/vista2.png", "/vista3.png"],
+        tags: [TAGS.SWITFUI, TAGS.REALM, TAGS.MONGO],
     }
+
     // {
     //     title: "PFlix",
     //     description:
