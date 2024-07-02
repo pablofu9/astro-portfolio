@@ -53,6 +53,7 @@ const PROJECTS = [
         image: "/vista1.png",
         assets: ["/vista1.png", "/vista2.png", "/vista3.png"],
         tags: [TAGS.SWITFUI, TAGS.REALM, TAGS.MONGO],
+        video: "/videoShare.mov",
     }
 
     // {
@@ -69,7 +70,7 @@ const PROJECTS = [
 
 <div class="container mx-auto py-8 grid grid-cols-1  gap-8">
     {
-        PROJECTS.map(({ title, description, tags, image, github,assets }) => (
+        PROJECTS.map(({ title, description, tags, image, github,assets, video }) => (
             <article class="border rounded-lg p-4 bg-white bg-opacity-10 ">
                 <div class="flex ">
                 <h3 class="text-2xl font-semibold text-yellow-200 pr-4">
@@ -109,6 +110,14 @@ const PROJECTS = [
                     ))}
               
                 </div>
+                {video && (
+                    <div class="container mx-auto py-8">
+                        <video class="w-full h-auto" controls>
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                )}
                 <ul class="flex gap-x-2 flex-row mb-2">
                     <li>
                         <span
