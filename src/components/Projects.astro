@@ -96,7 +96,16 @@ const PROJECTS = [
                         </li>
                     ))}
                 </ul>
+                {video && (
+                    <div class="container mx-auto py-8">
+                        <video class="w-auto h-80" controls>
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                )}
                 <div class="container mx-auto py-8 grid grid-cols-4 gap-4">
+                
                 
                      {assets?.map((asset) => (
                        
@@ -110,14 +119,7 @@ const PROJECTS = [
                     ))}
               
                 </div>
-                {video && (
-                    <div class="container mx-auto py-8">
-                        <video class="w-auto h-100" controls>
-                            <source src={video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                )}
+               
                 <ul class="flex gap-x-2 flex-row mb-2">
                     <li>
                         <span
